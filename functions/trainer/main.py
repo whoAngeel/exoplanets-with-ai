@@ -25,7 +25,8 @@ def trainer_function(request: Request):
     gcs_input_uri = request.json.get("gcs_input_uri")
     data_source = request.json.get("data_source")
     algorithm = request.json.get("algorithm")
-    model_name = request_json.get("model_name", f"model_{job_id[:8]}") 
+    model_name = request_json.get("model_name", f"model_{job_id[:8]}")
+    gcs_artifacts_path = request_json.get("gcs_artifacts_path")
 
     
     if not all([job_id, gcs_input_uri, data_source, algorithm]):
@@ -45,7 +46,8 @@ def trainer_function(request: Request):
                 "data_source": data_source,
                 "algorithm": algorithm,
                 "gcs_input_uri": gcs_input_uri
-            }
+            },
+            "gcs_artifacts_path": gcs_artifacts_path
         }
         doc_ref.set(initial_metadata)
         print(f"INFO: Job {job_id} ({model_name}) registrado en Firestore con estado 'training'.")
