@@ -1,3 +1,15 @@
+## Diagrama de flujo: Entrenamiento de modelo
+
+El siguiente diagrama ilustra el flujo completo para el entrenamiento de un modelo de exoplanetas usando las Cloud Functions y servicios de GCP:
+
+![Flujo de entrenamiento de modelo](./docs/flujo_entrenamiento_modelo.png)
+
+**Descripción técnica:**
+- El usuario envía un archivo CSV y parámetros vía HTTP al orquestador.
+- El orquestador identifica el tipo de dataset usando IA (Gemini API), verifica duplicados y encola la tarea de entrenamiento.
+- El entrenador recibe la tarea, preprocesa los datos, entrena el modelo y guarda el resultado en Cloud Storage.
+- La metadata del modelo y métricas se almacenan en Firestore para su consulta posterior.
+
 # exo-mint – Backend Serverless para análisis de exoplanetas en GCP
 Este repositorio implementa una arquitectura serverless basada en Google Cloud Functions, diseñada para el procesamiento automatizado, entrenamiento de modelos de machine learning y gestión de datos astronómicos de exoplanetas. El backend está desarrollado en Python 3.12 y aprovecha servicios gestionados de GCP como Firestore, Cloud Storage, Cloud Tasks y Vertex AI.
 
