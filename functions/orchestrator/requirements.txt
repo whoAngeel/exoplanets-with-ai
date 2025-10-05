@@ -2,3 +2,4 @@ functions-framework
 google-cloud-tasks
 google-generativeai>=0.3.0
 google-cloud-storage
+google-cloud-aiplatform
