@@ -2,7 +2,7 @@
 
 El siguiente diagrama ilustra el flujo completo para el entrenamiento de un modelo de exoplanetas usando las Cloud Functions y servicios de GCP:
 
-![Flujo de entrenamiento de modelo](./docs/flujo_entrenamiento_modelo.png)
+![Flujo de entrenamiento de modelo](assets/flujo_entrenamiento_modelo.png)
 
 **Descripción técnica:**
 - El usuario envía un archivo CSV y parámetros vía HTTP al orquestador.
